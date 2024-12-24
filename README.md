@@ -1,7 +1,5 @@
 # 💰 Expense Tracker Web App
 
-![Expense Tracker Banner](https://placeholder.svg?height=300&width=1200&text=Expense+Tracker+Pro)
-
 A comprehensive, feature-rich expense tracking application built with Next.js, React, and TypeScript. Take control of your finances with powerful tools and intuitive interfaces!
 
 ## 📚 Table of Contents
