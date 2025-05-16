@@ -133,7 +133,7 @@ Organize your finances with a flexible categorization system:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/expense-tracker-pro.git
+   git clone https://github.com/sdrdray/expense-tracker-pro.git
    ```
 
 2. Navigate to the project directory:
