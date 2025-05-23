@@ -7,7 +7,14 @@ type Props = {
 
 export default function Summary({ transactions, budget }: Props) {
   // Helper function to safely parse numbers
-  const safeAmount = (amount: any) => (typeof amount === 'number' ? amount : 0);
+  const safeAmount = (amount: number | string | undefined): number => {
+    if (typeof amount === 'number') return amount;
+    if (typeof amount === 'string') {
+      const parsed = parseFloat(amount);
+      return isNaN(parsed) ? 0 : parsed;
+    }
+    return 0;
+  };
 
   const totalIncome = transactions
     .filter(t => t.type === 'income')
@@ -57,7 +64,7 @@ export default function Summary({ transactions, budget }: Props) {
       <div className="mt-4 p-2 bg-yellow-200 dark:bg-yellow-800 rounded">
         <div className="font-semibold">Budget Status ({budget.period}):</div>
         <div>₹{budgetStatus.toFixed(2)}</div>
-        <div className="font-semibold">This Month's Expenses:</div>
+        <div className="font-semibold">This Month&apos;s Expenses:</div>
         <div>₹{thisMonthExpenses.toFixed(2)}</div>
       </div>
     </div>
